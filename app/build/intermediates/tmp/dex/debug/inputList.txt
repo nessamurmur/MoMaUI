@@ -1,0 +1,5 @@
+/home/nifty/code/coursera-android/Labs/MyApplication/app/build/intermediates/classes/debug
+/home/nifty/code/coursera-android/Labs/MyApplication/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-af7dbf340e3544dfb6e5ece7c0319dd3ad1ca4a6.jar
+/home/nifty/code/coursera-android/Labs/MyApplication/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-14bb4f3a99a4e8c2883e0ac6fa74a4bd4f40f8b8.jar
+/home/nifty/code/coursera-android/Labs/MyApplication/app/build/intermediates/pre-dexed/debug/classes-73a76e7b0137e197a1bea7eae9d57b0c20545dd2.jar
+/home/nifty/code/coursera-android/Labs/MyApplication/app/build/intermediates/pre-dexed/debug/classes-4debb67ada3b2a20047fbf1b5699dcd8f85ac454.jar
