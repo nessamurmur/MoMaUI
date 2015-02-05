@@ -347,10 +347,16 @@ int id action_menu_presenter 0x7f080003
 int id action_mode_bar 0x7f08002e
 int id action_mode_bar_stub 0x7f08002d
 int id action_mode_close_button 0x7f080020
-int id action_settings 0x7f080040
+int id action_settings 0x7f080046
 int id activity_chooser_view_content 0x7f080021
 int id always 0x7f080016
 int id beginning 0x7f080013
+int id box1 0x7f080040
+int id box2 0x7f080041
+int id box3 0x7f080042
+int id box4 0x7f080043
+int id box5 0x7f080044
+int id box6 0x7f080045
 int id checkbox 0x7f080029
 int id collapseActionView 0x7f080017
 int id container 0x7f08003f
@@ -424,8 +430,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f030014
 int layout abc_search_view 0x7f030015
 int layout abc_simple_dropdown_hint 0x7f030016
 int layout activity_blocks 0x7f030017
-int layout fragment_blocks 0x7f030018
-int layout support_simple_spinner_dropdown_item 0x7f030019
+int layout support_simple_spinner_dropdown_item 0x7f030018
 int menu menu_blocks 0x7f0c0000
 int string abc_action_bar_home_description 0x7f0a0000
 int string abc_action_bar_home_description_format 0x7f0a0001

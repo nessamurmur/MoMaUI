@@ -1,4 +1,56 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context=".BlocksActivity" tools:ignore="MergeRootFrame" />
+    tools:context=".BlocksActivity" tools:ignore="MergeRootFrame" >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="187dp"
+        android:layout_height="160dp"
+        android:layout_gravity="left|top"
+        android:id="@+id/box1"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="187dp"
+        android:layout_height="160dp"
+        android:layout_gravity="right|top"
+        android:id="@+id/box2" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="187dp"
+        android:layout_height="160dp"
+        android:layout_gravity="left|center_vertical"
+        android:id="@+id/box3" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="187dp"
+        android:layout_height="160dp"
+        android:layout_gravity="right|center_vertical"
+        android:id="@+id/box4" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="187dp"
+        android:layout_height="160dp"
+        android:layout_gravity="left|bottom"
+        android:id="@+id/box5" >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="187dp"
+        android:layout_height="160dp"
+        android:layout_gravity="right|bottom"
+        android:id="@+id/box6" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_gravity="bottom"
+        android:layout_weight="2.38" />
+</FrameLayout>

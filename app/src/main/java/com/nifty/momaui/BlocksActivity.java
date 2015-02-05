@@ -11,23 +11,37 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.LinearLayout;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import static java.util.Collections.shuffle;
+
 
 public class BlocksActivity extends ActionBarActivity {
+
+    private List<LinearLayout> boxes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blocks);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment(randomColor()))
-                    .commit();
+        boxes = fetchBoxes();
+        for (LinearLayout box : boxes) {
+            box.setBackgroundColor(randomColor());
         }
+    }
+
+    private List<LinearLayout> fetchBoxes() {
+        final LinearLayout box1 = (LinearLayout) findViewById(R.id.box1);
+        final LinearLayout box2 = (LinearLayout) findViewById(R.id.box2);
+        final LinearLayout box3 = (LinearLayout) findViewById(R.id.box3);
+        final LinearLayout box4 = (LinearLayout) findViewById(R.id.box4);
+        final LinearLayout box5 = (LinearLayout) findViewById(R.id.box5);
+        final LinearLayout box6 = (LinearLayout) findViewById(R.id.box6);
+        return Arrays.asList(box1, box2, box3, box4, box5, box6);
     }
 
     private int randomColor() {
@@ -59,24 +73,5 @@ public class BlocksActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        private int color;
-
-        public PlaceholderFragment(int color) {
-            this.color = color;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_blocks, container, false);
-            rootView.setBackgroundColor(this.color);
-            return rootView;
-        }
     }
 }
