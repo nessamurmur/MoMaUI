@@ -5,7 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">More Information</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="to_moma">Take Me to MoMA!</string>
-    <string name="cancel">Not Right Now</string>
+    <string name="to_moma">Visit MoMa!</string>
+    <string name="cancel">Not Now</string>
 
 </resources>

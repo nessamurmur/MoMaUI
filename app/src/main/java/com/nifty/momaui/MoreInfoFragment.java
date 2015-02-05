@@ -12,7 +12,7 @@ public class MoreInfoFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Fuck yeah!");
+        builder.setMessage("Click below to learn more!");
         builder.setPositiveButton(R.string.to_moma, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
