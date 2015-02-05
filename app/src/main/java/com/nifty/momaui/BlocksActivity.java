@@ -1,6 +1,7 @@
 package com.nifty.momaui;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -12,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -23,12 +26,62 @@ import static java.util.Collections.shuffle;
 public class BlocksActivity extends ActionBarActivity {
 
     private List<LinearLayout> boxes;
+    private HashMap<Integer, Integer> colorMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blocks);
+        SeekBar seekColor = (SeekBar) findViewById(R.id.seekColor);
         boxes = fetchBoxes();
+        randomizeColors();
+        fetchColors();
+        seekColor.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    private int currentProgress;
+
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        currentProgress = progress;
+                        for (LinearLayout box : boxes) {
+                            final int color = fetchColor(box);
+                            progressColor(box, color);
+                        }
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    private int fetchColor(LinearLayout box) {
+                        return (int) colorMap.get(box.getId());
+                    }
+
+                    private void progressColor(LinearLayout box, int color) {
+                        float[] hsvColor = new float[3];
+                        Color.colorToHSV(color, hsvColor);
+                        hsvColor[0] = hsvColor[0] + currentProgress;
+                        hsvColor[0] = hsvColor[0] % 360;
+                        box.setBackgroundColor(Color.HSVToColor(Color.alpha(color), hsvColor));
+                    }
+                }
+        );
+    }
+
+    private void fetchColors() {
+        for (LinearLayout box: boxes) {
+            int color = ((ColorDrawable) box.getBackground()).getColor();
+            colorMap.put(box.getId(), color);
+        }
+    }
+
+    private void randomizeColors() {
         for (LinearLayout box : boxes) {
             box.setBackgroundColor(randomColor());
         }

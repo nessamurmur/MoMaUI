@@ -50,7 +50,7 @@
     <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
+        android:id="@+id/seekColor"
         android:layout_gravity="bottom"
         android:layout_weight="2.38" />
 </FrameLayout>
