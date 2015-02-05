@@ -1,27 +1,21 @@
 package com.nifty.momaui;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
-
-import static java.util.Collections.shuffle;
-
 
 public class BlocksActivity extends ActionBarActivity {
 
@@ -122,9 +116,15 @@ public class BlocksActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            openDialog();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openDialog() {
+        DialogFragment moreInfo = new MoreInfoFragment();
+        moreInfo.show(getFragmentManager(), "moreInfo");
     }
 }
